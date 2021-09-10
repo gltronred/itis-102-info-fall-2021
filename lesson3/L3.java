@@ -70,21 +70,52 @@ public class L3 {
         // 27
         // ? ?
         //
-        int k = sc.nextInt();
-        int n = 1;
-        int max = k;
-        while (k != 1) {
-            n++;
-            // if (max < k) {
-            //     max = k;
-            // }
-            max = Math.max(max, k);
-            if (k % 2 == 0) {
-                k /= 2;
-            } else {
-                k = 3 * k + 1;
-            }
+        // int k = sc.nextInt();
+        // int n = 1;
+        // int max = k;
+        // while (k != 1) {
+        //     n++;
+        //     // if (max < k) {
+        //     //     max = k;
+        //     // }
+        //     max = Math.max(max, k);
+        //     if (k % 2 == 0) {
+        //         k /= 2;
+        //     } else {
+        //         k = 3 * k + 1;
+        //     }
+        // }
+        // System.out.println(n + " " + max);
+
+        ////////////////////
+        // Вводится число N
+        // Вывести YES, если число простое, и NO -
+        // если составное
+        //
+        // 47
+        // YES
+        //
+        // 49
+        // NO
+        //
+        // 1
+        // NO
+        //
+        int n = sc.nextInt();
+        boolean f = true;
+        // все числа i (i не делит n)
+        // т.е. (n не делится на 2) И
+        // (n не делится на 3) И ...
+        int i = 2;
+        while (i*i <= n && f) {
+            f &= (n % i != 0);
+            // f = f && (n % i != 0);
+            i++;
         }
-        System.out.println(n + " " + max);
+        if (f && n > 1) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
     }
 }
