@@ -102,7 +102,7 @@ public class L3 {
         // NO
         //
         int n = sc.nextInt();
-        boolean f = true;
+        boolean f = n > 1;
         // все числа i (i не делит n)
         // т.е. (n не делится на 2) И
         // (n не делится на 3) И ...
@@ -112,7 +112,7 @@ public class L3 {
             // f = f && (n % i != 0);
             i++;
         }
-        if (f && n > 1) {
+        if (f) {
             System.out.println("YES");
         } else {
             System.out.println("NO");
