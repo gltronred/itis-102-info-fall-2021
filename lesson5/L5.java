@@ -23,23 +23,42 @@ public class L5 {
         // 0
         // YES
         //
-        boolean f = true;
-        int a = sc.nextInt();
-        while (a != 0) {
-            // проверяем: a - простое?
-            boolean g = a > 1;
-            int i = 2;
-            while (i*i <= a && g) {
-                g &= (a % i != 0);
-                i++;
-            }
-            f &= g;
-            a = sc.nextInt();
-        }
-        if (f) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
-        }
+        // boolean f = true;
+        // int a = sc.nextInt();
+        // while (a != 0) {
+        //     // проверяем: a - простое?
+        //     boolean g = a > 1;
+        //     int i = 2;
+        //     while (i*i <= a && g) {
+        //         g &= (a % i != 0);
+        //         i++;
+        //     }
+        //     f &= g;
+        //     a = sc.nextInt();
+        // }
+        // if (f) {
+        //     System.out.println("YES");
+        // } else {
+        //     System.out.println("NO");
+        // }
+
+        // Вводятся целые положительные
+        // числа, ввод заканчивается 0.
+        // Вывести YES, если у всех
+        // чисел есть делитель, являющийся
+        // квадратом числа больше 1
+        // Иначе NO
+        //
+        // 54 49 8 0
+        // YES
+        //
+        // 54 15 8 0
+        // NO
+        //
+        // 54 1 0
+        // NO
+        //
+        // 0
+        // YES
     }
 }
