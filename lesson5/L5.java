@@ -60,5 +60,29 @@ public class L5 {
         //
         // 0
         // YES
+        //
+        boolean allHasSquare = true;
+        int a = sc.nextInt();
+        while (a != 0) {
+            // проверка, что есть
+            // делитель-квадрат
+            boolean hasSquare = false;
+            for (int b = 2; b <= a; b++){
+                int sqrtB = (int)Math.floor(Math.sqrt(b));
+                hasSquare |= (a % b == 0)
+                    && (sqrtB * sqrtB == b);
+            }
+            // boolean hasSquare = false;
+            // for (int b = 2; b*b <= a; b++) {
+            //     hasSquare |= (a % (b*b) == 0);
+            // }
+            allHasSquare &= hasSquare;
+            a = sc.nextInt();
+        }
+        if (allHasSquare) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
     }
 }
