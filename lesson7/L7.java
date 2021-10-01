@@ -22,14 +22,11 @@ public class L7 {
         // (1.5 x^2 - 3 x + 5 для x = 2.0)
         double y = sc.nextDouble();
         int n = sc.nextInt();
-        double s = 0;
-        for (int k=n; k>=0; k--) {
+        double s = sc.nextDouble();
+        for (int k=n-1; k>=0; k--) {
             double a = sc.nextDouble();
-            double p = 1;
-            for (int i=0; i<k; i++) {
-                p *= y;
-            }
-            s += a*p;
+            s *= y;
+            s += a;
         }
         System.out.println(s);
     }
