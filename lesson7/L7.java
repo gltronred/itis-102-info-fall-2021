@@ -37,21 +37,11 @@ public class L7 {
         double p = 1;
         int k = 0;
         while (Math.abs(p) >= 1e-6) {
-            if (k % 2 == 0) {
-                p = 1;
-            } else {
-                p = -1;
-            }
-            for (int i=0; i<2*k; i++) {
-                p *= x;
-            }
-            int fact = 1;
-            for (int i=1; i<=2*k; i++) {
-                fact *= i;
-            }
-            p /= fact;
             s += p;
             k++;
+            p = -p;
+            p *= x*x;
+            p /= (2*k-1)*(2*k);
         }
         System.out.println(s);
         System.out.println(Math.cos(x));
