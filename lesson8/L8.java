@@ -80,15 +80,15 @@ public class L8 {
         }
 
         int s0 = 0;
-        for (int i=0; i<m; i++) {
-            s0 += a[0][i];
+        for (int i=0; i<n; i++) {
+            s0 += a[i][0];
         }
 
         boolean f = true;
-        for (int i=1; i<n; i++) {
+        for (int i=1; i<m; i++) {
             int si = 0;
-            for (int j=0; j<m; j++) {
-                si += a[i][j];
+            for (int j=0; j<n; j++) {
+                si += a[j][i];
             }
             f &= (s0 == si);
         }
