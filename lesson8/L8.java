@@ -70,33 +70,49 @@ public class L8 {
         // Решение задачи с суммой по строкам
         Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int[][] a = new int[n][m];
-        for (int i=0; i<n; i++) {
-            for (int j=0; j<m; j++) {
-                a[i][j] = sc.nextInt();
-            }
-        }
+        // int n = sc.nextInt();
+        // int m = sc.nextInt();
+        // int[][] a = new int[n][m];
+        // for (int i=0; i<n; i++) {
+        //     for (int j=0; j<m; j++) {
+        //         a[i][j] = sc.nextInt();
+        //     }
+        // }
 
-        int s0 = 0;
-        for (int i=0; i<n; i++) {
-            s0 += a[i][0];
-        }
+        // int s0 = 0;
+        // for (int i=0; i<n; i++) {
+        //     s0 += a[i][0];
+        // }
 
-        boolean f = true;
-        for (int i=1; i<m; i++) {
-            int si = 0;
-            for (int j=0; j<n; j++) {
-                si += a[j][i];
-            }
-            f &= (s0 == si);
-        }
+        // boolean f = true;
+        // for (int i=1; i<m; i++) {
+        //     int si = 0;
+        //     for (int j=0; j<n; j++) {
+        //         si += a[j][i];
+        //     }
+        //     f &= (s0 == si);
+        // }
 
-        if (f) {
-            System.out.println("YES " + s0);
-        } else {
-            System.out.println("NO");
-        }
+        // if (f) {
+        //     System.out.println("YES " + s0);
+        // } else {
+        //     System.out.println("NO");
+        // }
+
+        // Вводится N
+        // Вводится N*N элементов квадратной
+        // матрицы
+        // Вывести YES, если она является
+        // магическим квадратом (совпадают суммы
+        // по строкам, столбцам, основной и
+        // побочной диагоналям)
+        // Вывести NO, иначе
+        //
+        // 3
+        // 8 1 6
+        // 3 5 7
+        // 4 9 2
+        // -----
+        // YES
     }
 }
