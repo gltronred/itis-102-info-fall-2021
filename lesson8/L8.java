@@ -3,31 +3,31 @@ import java.util.*;
 
 public class L8 {
     public static void main(String[] args) {
-        int n = 4;
-        int[][] a = new int[n][];
-        for (int i=0; i<n; i++) {
-            a[i] = new int[1+i];
-            for (int j=0; j<i+1; j++) {
-                a[i][j] = i+j;
-            }
-        }
+        // int n = 4;
+        // int[][] a = new int[n][];
+        // for (int i=0; i<n; i++) {
+        //     a[i] = new int[1+i];
+        //     for (int j=0; j<i+1; j++) {
+        //         a[i][j] = i+j;
+        //     }
+        // }
 
-        for (int i=0; i<n; i++) {
-            System.out.println(Arrays.toString(a[i]));
-        }
+        // for (int i=0; i<n; i++) {
+        //     System.out.println(Arrays.toString(a[i]));
+        // }
 
-        ///////////////////////////////
-        int m = 3;
-        int[][] b = new int[n][m];
-        for (int i=0; i<n; i++) {
-            for (int j=0; j<m; j++) {
-                b[i][j] = i*j;
-            }
-        }
+        // ///////////////////////////////
+        // int m = 3;
+        // int[][] b = new int[n][m];
+        // for (int i=0; i<n; i++) {
+        //     for (int j=0; j<m; j++) {
+        //         b[i][j] = i*j;
+        //     }
+        // }
 
-        for (int i=0; i<n; i++) {
-            System.out.println(Arrays.toString(b[i]));
-        }
+        // for (int i=0; i<n; i++) {
+        //     System.out.println(Arrays.toString(b[i]));
+        // }
 
         // Вводятся размеры двумерного массива N, M
         // Вводятся элементы двумерного массива
@@ -66,5 +66,37 @@ public class L8 {
         // 1 -1
         // -----
         // NO
+
+        // Решение задачи с суммой по строкам
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] a = new int[n][m];
+        for (int i=0; i<n; i++) {
+            for (int j=0; j<m; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        int s0 = 0;
+        for (int i=0; i<m; i++) {
+            s0 += a[0][i];
+        }
+
+        boolean f = true;
+        for (int i=1; i<n; i++) {
+            int si = 0;
+            for (int j=0; j<m; j++) {
+                si += a[i][j];
+            }
+            f &= (s0 == si);
+        }
+
+        if (f) {
+            System.out.println("YES " + s0);
+        } else {
+            System.out.println("NO");
+        }
     }
 }
