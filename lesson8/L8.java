@@ -114,5 +114,42 @@ public class L8 {
         // 4 9 2
         // -----
         // YES
+
+        int n = sc.nextInt();
+        int[][] a = new int[n][n];
+        for (int i=0; i<n; i++) {
+            for (int j=0; j<n; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        int s0 = 0;
+        for (int i=0; i<n; i++) {
+            s0 += a[i][i];
+        }
+
+        boolean f = true;
+        for (int i=0; i<n; i++) {
+            int si = 0;
+            int sj = 0;
+            for (int j=0; j<n; j++) {
+                si += a[i][j];
+                sj += a[j][i];
+            }
+            f &= (s0 == si);
+            f &= (s0 == sj);
+        }
+
+        int sd = 0;
+        for (int i=0; i<n; i++) {
+            sd += a[i][n-i-1];
+        }
+        f &= (s0 == sd);
+
+        if (f) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
     }
 }
