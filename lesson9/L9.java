@@ -19,18 +19,27 @@ public class L9 {
         int y = sc.nextInt();
         int x = sc.nextInt();
 
-        a[x][y] = 2;
-        for (int i=x-1; i>=0; i--) {
-            a[i][y] = 1;
+        a[x][y] = 3;
+
+        for (int d=1;
+             x-d>=0 && y-d>=0;
+             d++) {
+            a[x-d][y-d] = 1;
         }
-        for (int i=x+1; i<8; i++) {
-            a[i][y] = 1;
+        for (int d=1;
+             x+d<8 && y+d<8;
+             d++) {
+            a[x+d][y+d] = 1;
         }
-        for (int i=y-1; i>=0; i--) {
-            a[x][i] = 1;
+        for (int d=1;
+             x-d>=0 && y+d<8;
+             d++) {
+            a[x-d][y+d] = 1;
         }
-        for (int i=y+1; i<8; i++) {
-            a[x][i] = 1;
+        for (int d=1;
+             x+d<8 && y-d>=0;
+             d++) {
+            a[x+d][y-d] = 1;
         }
 
         for (int i=7; i>=0; i--) {
