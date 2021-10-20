@@ -51,37 +51,46 @@ public class L10 {
         {1, -1}, {-1, 1}
     };
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            int sosediLife = 0;
-            for (int k = 0; k < d.length; k++) {
-                int x = d[k][0];
-                int y = d[k][1];
-                if (a[(i+x+n) % n][(j+y+n) % n] == 1) {
-                    sosediLife++;
+    int p = 1;
+    while (p==1) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                int sosediLife = 0;
+                for (int k = 0; k < d.length; k++) {
+                    int x = d[k][0];
+                    int y = d[k][1];
+                    if (a[(i+x+n) % n][(j+y+n) % n] == 1) {
+                        sosediLife++;
+                    }
+                }
+                // System.out.println(sosediLife + " " + i + " " + j);
+                b[i][j] = a[i][j];
+                if (b[i][j] == 1 && sosediLife < 2) {
+                    b[i][j] = 0;
+                } else if (b[i][j] == 1 && sosediLife > 3) {
+                    b[i][j] = 0;
+                } else if (b[i][j] == 0 && sosediLife == 3) {
+                    b[i][j] = 1;
                 }
             }
-            // System.out.println(sosediLife + " " + i + " " + j);
-            b[i][j] = a[i][j];
-            if (b[i][j] == 1 && sosediLife < 2) {
-                b[i][j] = 0;
-            } else if (b[i][j] == 1 && sosediLife > 3) {
-                b[i][j] = 0;
-            } else if (b[i][j] == 0 && sosediLife == 3) {
-                b[i][j] = 1;
-            }
         }
-    }
 
-    for (int i=0; i<20; i++) {
-        for (int j=0; j<20; j++) {
-            if (b[i][j] == 0) {
-                System.out.print(" ");
-            } else {
-                System.out.print("*");
+        for (int i=0; i<20; i++) {
+            for (int j=0; j<20; j++) {
+                if (b[i][j] == 0) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print("*");
+                }
             }
+            System.out.println();
         }
-        System.out.println();
+
+        int[][] t = a;
+        a = b;
+        b = t;
+
+        p = sc.nextInt();
     }
   }
 }
