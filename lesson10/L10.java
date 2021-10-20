@@ -34,6 +34,7 @@ public class L10 {
     Scanner sc = new Scanner(System.in);
     int n = 20;
     int[][] a = new int[n][n];
+    int[][] b = new int[n][n];
 
     int realN = sc.nextInt();
     int realM = sc.nextInt();
@@ -43,37 +44,38 @@ public class L10 {
         }
     }
 
-    int[][] d = {​​​​​​​​
-        {​​​​​​​​1, 0}​​​​​​​​, {​​​​​​​​0, 1}​​​​​​​​,
-        {​​​​​​​​-1, 0}​​​​​​​​, {​​​​​​​​0, -1}​​​​​​​​,
-        {​​​​​​​​1, 1}​​​​​​​​, {​​​​​​​​-1, -1}​​​​​​​​,
-        {​​​​​​​​1, -1}​​​​​​​​, {​​​​​​​​-1, 1}​​​​​​​​
-    }​​​​​​​​;
+    int[][] d = {
+        {1, 0}, {0, 1},
+        {-1, 0}, {0, -1},
+        {1, 1}, {-1, -1},
+        {1, -1}, {-1, 1}
+    };
 
-    for (int i = 0; i < n; i++) {​​​​​​​​
-        for (int j = 0; j < n; j++) {​​​​​​​​
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
             int sosediLife = 0;
-            for (int k = 0; k < d.length; k++) {​​​​​​​​
+            for (int k = 0; k < d.length; k++) {
                 int x = d[k][0];
                 int y = d[k][1];
-                if (a[(i+x+n) % n][(j+y+n) % n] == 1) {​​​​​​​​
+                if (a[(i+x+n) % n][(j+y+n) % n] == 1) {
                     sosediLife++;
-                }​​​​​​​​
-            }​​​​​​​​
+                }
+            }
             // System.out.println(sosediLife + " " + i + " " + j);
-            if (a[i][j] == 1 && sosediLife < 2) {​​​
-                a[i][j] = 0;
-            }​​​ else if (a[i][j] == 1 && sosediLife > 3) {​​​
-                a[i][j] = 0;
-            }​​​ else if (a[i][j] == 0 && sosediLife == 3) {​​​
-                a[i][j] = 1;
-            }​​​
-        }​​​​​​​​
-    }​​​​​​​​
+            b[i][j] = a[i][j];
+            if (b[i][j] == 1 && sosediLife < 2) {
+                b[i][j] = 0;
+            } else if (b[i][j] == 1 && sosediLife > 3) {
+                b[i][j] = 0;
+            } else if (b[i][j] == 0 && sosediLife == 3) {
+                b[i][j] = 1;
+            }
+        }
+    }
 
     for (int i=0; i<20; i++) {
         for (int j=0; j<20; j++) {
-            if (a[i][j] == 0) {
+            if (b[i][j] == 0) {
                 System.out.print(" ");
             } else {
                 System.out.print("*");
