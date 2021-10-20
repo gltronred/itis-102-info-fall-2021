@@ -60,7 +60,14 @@ public class L10 {
                     sosediLife++;
                 }​​​​​​​​
             }​​​​​​​​
-            System.out.println(sosediLife + " " + i + " " + j);
+            // System.out.println(sosediLife + " " + i + " " + j);
+            if (a[i][j] == 1 && sosediLife < 2) {​​​
+                a[i][j] = 0;
+            }​​​ else if (a[i][j] == 1 && sosediLife > 3) {​​​
+                a[i][j] = 0;
+            }​​​ else if (a[i][j] == 0 && sosediLife == 3) {​​​
+                a[i][j] = 1;
+            }​​​
         }​​​​​​​​
     }​​​​​​​​
 
