@@ -5,7 +5,24 @@ public class L11 {
     //     return x*2;
     // }
     public static boolean isPrime(int n) {
-        return false;
+        if (n <= 1) {
+            return false;
+        }
+        for (int i=2; i*i<=n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static int primeSum(int n) {
+        int s = 0;
+        for (int i=2; i<=n; i++) {
+            if (isPrime(i)) {
+                s += i;
+            }
+        }
+        return s;
     }
     public static void main(String[] args) {
         System.out.println(isPrime(1));
@@ -13,6 +30,9 @@ public class L11 {
         System.out.println(isPrime(15));
         System.out.println(isPrime(121));
         System.out.println(isPrime(1024));
+        System.out.println(isPrime(65537));
+
+        System.out.println(primeSum(100));
 
         // System.out.println(Arrays.toString(args));
 
