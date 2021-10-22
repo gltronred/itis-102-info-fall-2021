@@ -25,7 +25,11 @@ public class L11 {
         return s;
     }
     public static int[] sum(int[] a, int[] b) {
-        return new int[1];
+        int[] c = new int[a.length];
+        for (int i=0; i<c.length; i++) {
+            c[i] = a[i] + b[i];
+        }
+        return c;
     }
     public static void main(String[] args) {
         System.out.println(isPrime(1));
@@ -36,6 +40,10 @@ public class L11 {
         System.out.println(isPrime(65537));
 
         System.out.println(primeSum(100));
+
+        int[] a = {1,2,3};
+        int[] b = {4,5,6};
+        System.out.println(Arrays.toString(sum(a,b)));
 
         // System.out.println(Arrays.toString(args));
 
