@@ -19,7 +19,25 @@ public class L12 {
         }
         return c;
     }
+    public static int[] extend(int[] a, int n) {
+        int[] b = new int[n];
+        for (int i=0; i<a.length; i++) {
+            b[i] = a[i];
+        }
+        return b;
+    }
     public static int[] carry(int q, int[] a) {
+        int c = 0;
+        int n = a.length;
+        for (int i=0; i<n; i++) {
+            a[i] += c;
+            c = a[i] / q;
+            a[i] %= q; // a[i] = a[i] % q
+        }
+        if (c > 0) {
+            a = extend(a,n+1);
+            a[n] = c;
+        }
         return a;
     }
     public static int[] addWithCarry(int q, int[] a, int[] b) {
@@ -28,6 +46,8 @@ public class L12 {
         return c;
     }
     public static void main(String[] args) {
+        System.out.println(Arrays.toString(extend(new int[]{1,2}, 5))); // 1,2,0,0,0
+
         System.out.println(Arrays.toString(carry(10, new int[]{12,3}))); // 2,4
         System.out.println(Arrays.toString(carry(10, new int[]{1,1,12}))); // 1,1,2,1
         System.out.println(Arrays.toString(carry(10, new int[]{10,9,1}))); // 0,0,2
