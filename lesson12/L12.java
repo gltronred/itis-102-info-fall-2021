@@ -49,6 +49,10 @@ public class L12 {
     public static int[] multiplyDigit(int q, int[] a, int digit) {
         return a;
     }
+    // TODO: сдвиг числа на k влево
+    public static int[] shift(int q, int[] a, int k) {
+        return a;
+    }
     // TODO: умножение числа на число
     public static int[] multiply(int q, int[] a, int[] b) {
         return a;
