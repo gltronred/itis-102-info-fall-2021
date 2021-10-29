@@ -45,6 +45,14 @@ public class L12 {
         c = carry(q, c);
         return c;
     }
+    // TODO: умножение числа на цифру
+    public static int[] multiplyDigit(int q, int[] a, int digit) {
+        return a;
+    }
+    // TODO: умножение числа на число
+    public static int[] multiply(int q, int[] a, int[] b) {
+        return a;
+    }
     public static void main(String[] args) {
         System.out.println(Arrays.toString(extend(new int[]{1,2}, 5))); // 1,2,0,0,0
 
