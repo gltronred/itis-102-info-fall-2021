@@ -45,21 +45,40 @@ public class L12 {
         c = carry(q, c);
         return c;
     }
-    // TODO: умножение числа (заданного массивом a цифр в q-чной
+    // DONE: умножение числа (заданного массивом a цифр в q-чной
     // системе счисления) на цифру digit
     public static int[] multiplyDigit(int q, int[] a, int digit) {
-        return a;
+        int n = a.length;
+        int[] c = new int[n];
+        for (int i=0; i<n; i++) {
+            c[i] = a[i] * digit;
+        }
+        c = carry(q, c);
+        return c;
     }
-    // TODO: сдвиг числа (заданного массивом a цифр в q-чной
+    // DONE: сдвиг числа (заданного массивом a цифр в q-чной
     // системе счисления) на k влево
     public static int[] shift(int q, int[] a, int k) {
-        return a;
+        int n = a.length;
+        int[] c = new int[n+k];
+        for (int i=0; i<n; i++) {
+            c[i+k] = a[i];
+        }
+        return c;
     }
-    // TODO: умножение числа (заданного массивом a цифр в q-чной
+    // DONE: умножение числа (заданного массивом a цифр в q-чной
     // системе счисления) на число (заданное массивом b цифр в q-чной
     // системе счисления)
     public static int[] multiply(int q, int[] a, int[] b) {
-        return a;
+        int n = a.length;
+        int m = b.length;
+        int[] c = new int[n+m];
+        for (int i=0; i<n; i++) {
+            int[] d = multiplyDigit(q, b, a[i]);
+            d = shift(q, d, i);
+            c = addWithCarry(q, c, d);
+        }
+        return c;
     }
     public static void main(String[] args) {
         System.out.println(Arrays.toString(extend(new int[]{1,2}, 5))); // 1,2,0,0,0
