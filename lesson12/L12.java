@@ -45,15 +45,19 @@ public class L12 {
         c = carry(q, c);
         return c;
     }
-    // TODO: умножение числа на цифру
+    // TODO: умножение числа (заданного массивом a цифр в q-чной
+    // системе счисления) на цифру digit
     public static int[] multiplyDigit(int q, int[] a, int digit) {
         return a;
     }
-    // TODO: сдвиг числа на k влево
+    // TODO: сдвиг числа (заданного массивом a цифр в q-чной
+    // системе счисления) на k влево
     public static int[] shift(int q, int[] a, int k) {
         return a;
     }
-    // TODO: умножение числа на число
+    // TODO: умножение числа (заданного массивом a цифр в q-чной
+    // системе счисления) на число (заданное массивом b цифр в q-чной
+    // системе счисления)
     public static int[] multiply(int q, int[] a, int[] b) {
         return a;
     }
@@ -70,5 +74,9 @@ public class L12 {
         System.out.println(Arrays.toString(add(10, new int[]{9,9}, new int[]{9,9,9}))); // 18,18,9
 
         System.out.println(Arrays.toString(addWithCarry(10, new int[]{1,2,3}, new int[]{9,9,9}))); // 0,2,3,1
+
+        System.out.println(Arrays.toString(multiplyDigit(10, new int[]{1,2,4}, 3))); // 3,6,2,1
+        System.out.println(Arrays.toString(shift(10, new int[]{1,2,3},2))); // 0,0,1,2,3
+        System.out.println(Arrays.toString(multiply(10, new int[]{2,1}, new int[]{8,9}))); //6,7,1,1
     }
 }
