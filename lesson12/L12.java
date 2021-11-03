@@ -33,6 +33,10 @@ public class L12 {
             a[i] += c;
             c = a[i] / q;
             a[i] %= q; // a[i] = a[i] % q
+            if (a[i] < 0) {
+                a[i] += 10;
+                c = -1;
+            }
         }
         if (c > 0) {
             a = extend(a,n+1);
@@ -87,10 +91,16 @@ public class L12 {
         for (int i = 0; i < a.length; i++) {
             c[i] = a[i] - b[i];
         }
-        return c;
+        return carry(q, c);
     }
     public static void main(String[] args) {
         System.out.println(Arrays.toString(subtract(10, new int[]{7,3,6}, new int[]{4,5,2})));
+        System.out.println(Arrays.toString(subtract(10, new int[]{1,0,0,0,9}, new int[]{2,0,0,0,7})));
+        System.out.println(Arrays.toString(subtract(10, new int[]{1,0,1,0,1,1}, new int[]{0,9,0,9,0,1})));
+        System.out.println(Arrays.toString(subtract(10, new int[]{1,0,0,0,9}, new int[]{2})));
+
+        System.out.println(Arrays.toString(carry(10, new int[]{3,-2,4})));
+        System.out.println(Arrays.toString(carry(10, new int[]{-1,0,0,0,2})));
 
         System.out.println(Arrays.toString(extend(new int[]{1,2}, 5))); // 1,2,0,0,0
 
