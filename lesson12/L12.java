@@ -80,6 +80,11 @@ public class L12 {
         }
         return c;
     }
+    // TODO: вычитание числа b из числа a (оба заданы массивами
+    // цифр в q-чной системе счисления)
+    public static int[] subtract(int q, int[] a, int[] b) {
+        return a;
+    }
     public static void main(String[] args) {
         System.out.println(Arrays.toString(extend(new int[]{1,2}, 5))); // 1,2,0,0,0
 
