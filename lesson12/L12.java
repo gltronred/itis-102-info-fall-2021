@@ -83,9 +83,15 @@ public class L12 {
     // TODO: вычитание числа b из числа a (оба заданы массивами
     // цифр в q-чной системе счисления)
     public static int[] subtract(int q, int[] a, int[] b) {
-        return a;
+        int[] c = new int[a.length];
+        for (int i = 0; i < a.length; i++) {
+            c[i] = a[i] - b[i];
+        }
+        return c;
     }
     public static void main(String[] args) {
+        System.out.println(Arrays.toString(subtract(10, new int[]{7,3,6}, new int[]{4,5,2})));
+
         System.out.println(Arrays.toString(extend(new int[]{1,2}, 5))); // 1,2,0,0,0
 
         System.out.println(Arrays.toString(carry(10, new int[]{12,3}))); // 2,4
