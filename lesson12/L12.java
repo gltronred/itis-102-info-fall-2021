@@ -21,7 +21,7 @@ public class L12 {
     }
     public static int[] extend(int[] a, int n) {
         int[] b = new int[n];
-        for (int i=0; i<a.length; i++) {
+        for (int i=0; i<Math.min(a.length, n); i++) {
             b[i] = a[i];
         }
         return b;
@@ -41,7 +41,12 @@ public class L12 {
         if (c > 0) {
             a = extend(a,n+1);
             a[n] = c;
+            n++;
         }
+        while (n>0 && a[n-1]==0) {
+            n--;
+        }
+        a = extend(a,n);
         return a;
     }
     public static int[] addWithCarry(int q, int[] a, int[] b) {
@@ -98,6 +103,7 @@ public class L12 {
         System.out.println(Arrays.toString(subtract(10, new int[]{1,0,0,0,9}, new int[]{2,0,0,0,7})));
         System.out.println(Arrays.toString(subtract(10, new int[]{1,0,1,0,1,1}, new int[]{0,9,0,9,0,1})));
         System.out.println(Arrays.toString(subtract(10, new int[]{1,0,0,0,9}, new int[]{2})));
+        System.out.println(Arrays.toString(subtract(10, new int[]{1,0,0,0,1}, new int[]{2})));
 
         System.out.println(Arrays.toString(carry(10, new int[]{3,-2,4})));
         System.out.println(Arrays.toString(carry(10, new int[]{-1,0,0,0,2})));
