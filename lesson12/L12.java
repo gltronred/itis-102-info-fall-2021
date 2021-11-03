@@ -89,7 +89,7 @@ public class L12 {
     public static int[] subtract(int q, int[] a, int[] b) {
         int[] c = new int[a.length];
         for (int i = 0; i < a.length; i++) {
-            c[i] = a[i] - b[i];
+            c[i] = a[i] - get(b,i);
         }
         return carry(q, c);
     }
