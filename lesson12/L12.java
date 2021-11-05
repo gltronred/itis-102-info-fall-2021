@@ -98,7 +98,14 @@ public class L12 {
         }
         return carry(q, c);
     }
+    // TODO: частное от деление числа a на число b (оба
+    // заданы массивами цифр в q-чной системе счисления)
+    public static int[] quotient(int q, int[] a, int[] b) {
+        return a;
+    }
     public static void main(String[] args) {
+        System.out.println(Arrays.toString(quotient(10, new int[]{7,3,6}, new int[]{4,5,2}))); // 2
+
         System.out.println(Arrays.toString(subtract(10, new int[]{7,3,6}, new int[]{4,5,2})));
         System.out.println(Arrays.toString(subtract(10, new int[]{1,0,0,0,9}, new int[]{2,0,0,0,7})));
         System.out.println(Arrays.toString(subtract(10, new int[]{1,0,1,0,1,1}, new int[]{0,9,0,9,0,1})));
