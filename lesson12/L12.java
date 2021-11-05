@@ -89,7 +89,7 @@ public class L12 {
         }
         return c;
     }
-    // TODO: вычитание числа b из числа a (оба заданы массивами
+    // DONE: вычитание числа b из числа a (оба заданы массивами
     // цифр в q-чной системе счисления)
     public static int[] subtract(int q, int[] a, int[] b) {
         int[] c = new int[a.length];
