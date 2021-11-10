@@ -31,6 +31,23 @@ public class L13 {
             System.out.println(i + " -> " + Arrays.toString(a));
         }
     }
+    // ... пузырьком
+    public static void bubble(int[] a) {
+        int n = a.length;
+        boolean f = true;
+        while (f) {
+            f = false;
+            for (int j=0; j<n-1; j++) {
+                if (a[j]>a[j+1]) {
+                    int t = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = t;
+                    f = true;
+                }
+            }
+            System.out.println("-> " + Arrays.toString(a));
+        }
+    }
     public static void main(String[] args) {
         int[] a = new int[]{5,3,6,4,1};
         System.out.println(Arrays.toString(a));
@@ -40,6 +57,11 @@ public class L13 {
         a = new int[]{5,3,6,4,1};
         System.out.println(Arrays.toString(a));
         selection(a);
+        System.out.println(Arrays.toString(a));
+
+        a = new int[]{5,3,6,4,1};
+        System.out.println(Arrays.toString(a));
+        bubble(a);
         System.out.println(Arrays.toString(a));
     }
 }
