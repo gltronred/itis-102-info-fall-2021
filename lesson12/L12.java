@@ -34,7 +34,7 @@ public class L12 {
             c = a[i] / q;
             a[i] %= q; // a[i] = a[i] % q
             if (a[i] < 0) {
-                a[i] += 10;
+                a[i] += q;
                 c = -1;
             }
         }
@@ -98,12 +98,29 @@ public class L12 {
         }
         return carry(q, c);
     }
+    // a <= b ?
+    public static boolean less(int q, int[] a, int[] b) {
+        if (a.length < b.length) return true;
+        if (a.length > b.length) return false;
+        for (int i=0; i<a.length; i++) {
+            if (a[i] < b[i]) return true;
+            if (a[i] > b[i]) return false;
+        }
+        return true;
+    }
     // TODO: частное от деление числа a на число b (оба
     // заданы массивами цифр в q-чной системе счисления)
     public static int[] quotient(int q, int[] a, int[] b) {
-        return a;
+        int[] r = new int[a.length];
+        int[] e = {1};
+        while (less(q,b,a)) {
+            a = subtract(q, a, b);
+            r = addWithCarry(q, r, e);
+        }
+        return r;
     }
     public static void main(String[] args) {
+        System.out.println(Arrays.toString(quotient(10, new int[]{7,3,6}, new int[]{4,5,2}))); // 2
         System.out.println(Arrays.toString(quotient(10, new int[]{7,3,6}, new int[]{4,5,2}))); // 2
 
         System.out.println(Arrays.toString(subtract(10, new int[]{7,3,6}, new int[]{4,5,2})));
