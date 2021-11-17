@@ -47,18 +47,34 @@ class Lamp {
 
 public class L14 {
     public static void main(String[] args) {
-        Lamp lamp1 = new Lamp();
-        Lamp lamp2 = new Lamp("lamp2");
+        // Lamp lamp1 = new Lamp();
+        // Lamp lamp2 = new Lamp("lamp2");
 
-        lamp1.turnOn();
-        System.out.println(lamp1);
-        System.out.println(lamp2);
-        lamp1.setState(false);
-        System.out.println(lamp1);
-        lamp1.setState(true);
-        System.out.println(lamp1);
-        lamp1 = lamp2;
-        System.out.println(lamp1);
-        System.out.println(lamp2);
+        // lamp1.turnOn();
+        // System.out.println(lamp1);
+        // System.out.println(lamp2);
+        // lamp1.setState(false);
+        // System.out.println(lamp1);
+        // lamp1.setState(true);
+        // System.out.println(lamp1);
+        // lamp1 = lamp2;
+        // System.out.println(lamp1);
+        // System.out.println(lamp2);
+        Candle c1 = new Candle(5);
+        c1.turnOn();
+        Candle c2 = new Candle(2);
+        c2.turnOn();
+        for (int i=0; i<4; i++) {
+            System.out.println(c1 + " " + c1.getState());
+            System.out.println(c2 + " " + c2.getState());
+        }
+        c2.turn(c1);
+        System.out.println(c2 + " " + c2.getState());
+        Candle c3 = new Candle(10);
+        c1.turn(c3);
+        System.out.println(c1 + " " + c1.getState());
+        System.out.println(c3 + " " + c3.getState());
+        c3.turnOff();
+        System.out.println(c3 + " " + c3.getState());
     }
 }
