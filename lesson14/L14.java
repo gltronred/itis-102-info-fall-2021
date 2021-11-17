@@ -2,19 +2,38 @@ import java.io.*;
 import java.util.*;
 
 class Candle {
+    boolean state;
+    int length;
+
     // задаётся длина свечи
-    public Candle(int length) {}
+    public Candle(int length) {
+        this.length = length;
+    }
+
     // зажечь и потушить
-    public void turnOn() {}
-    public void turnOff() {}
+    public void turnOn()  {
+        if (length > 0) {
+            state=true;
+        }
+    }
+    public void turnOff() { state=false; }
+
     // либо горит, либо нет
     // если горит, то длина уменьшается на 1
     // если длина стала 0 - то больше не горит
-    public boolean getState() { return false; }
+    public boolean getState() {
+        if (state) { length--; }
+        if (length <= 0) { state=false; }
+        return state;
+    }
+
     // можно зажечь от этой свечи другую
     // если эта горит
     // (и наоборот)
-    public void turn(Candle other) {}
+    public void turn(Candle other) {
+        this.state |= other.state;
+        other.state |= this.state;
+    }
 }
 
 class Lamp {
@@ -64,7 +83,7 @@ public class L14 {
         c1.turnOn();
         Candle c2 = new Candle(2);
         c2.turnOn();
-        for (int i=0; i<4; i++) {
+        for (int i=0; i<2; i++) {
             System.out.println(c1 + " " + c1.getState());
             System.out.println(c2 + " " + c2.getState());
         }
