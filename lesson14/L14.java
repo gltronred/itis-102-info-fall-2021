@@ -1,6 +1,22 @@
 import java.io.*;
 import java.util.*;
 
+class Candle {
+    // задаётся длина свечи
+    public Candle(int length) {}
+    // зажечь и потушить
+    public void turnOn() {}
+    public void turnOff() {}
+    // либо горит, либо нет
+    // если горит, то длина уменьшается на 1
+    // если длина стала 0 - то больше не горит
+    public boolean getState() {}
+    // можно зажечь от этой свечи другую
+    // если эта горит
+    // (и наоборот)
+    public void turn(Candle other) {}
+}
+
 class Lamp {
     boolean state;
     String name;
