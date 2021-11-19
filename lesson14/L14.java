@@ -121,11 +121,19 @@ class LCD extends Display {
 
     public LCD(int height, int width) {
         super(height);
-        this.heigth = height;
+        this.height = height;
         this.width = width;
     }
     public int getHeight() { return height; }
     public int getWidth() { return width; }
+
+    public void show(String line) {
+        if (line.length() > width) {
+            super.show(line.substring(0,width-1));
+        } else {
+            super.show(line);
+        }
+    }
 }
 
 public class L14 {
@@ -187,7 +195,7 @@ public class L14 {
         // Object l4 = new RGBLamp();
         // System.out.println("Object " + l4.toString());
 
-        Display d = new Display(5);
+        Display d = new LCD(5,4);
 
         System.out.println(d);
         d.turnOn();
