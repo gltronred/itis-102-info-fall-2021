@@ -92,6 +92,26 @@ class RGBLamp extends Lamp {
     }
 }
 
+class Display {
+    String[] screen;
+    boolean isOn;
+    int currentLine;
+
+    public Display(int n) {
+        screen = new String[n];
+        currentLine = 0;
+    }
+    public void turnOn() { isOn = true; }
+    public void turnOff(){ isOn = false;}
+    public void show(String line) {
+        if (isOn) {
+            screen[currentLine] = line;
+            currentLine++;
+            currentLine %= screen.length;
+        }
+    }
+}
+
 public class L14 {
     public static void main(String[] args) {
         // Lamp lamp1 = new Lamp();
