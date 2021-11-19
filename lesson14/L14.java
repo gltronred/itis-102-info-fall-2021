@@ -77,6 +77,12 @@ class RGBLamp extends Lamp {
     public int getRed() { return red; }
     public int getGreen() { return green; }
     public int getBlue() { return blue; }
+
+    public String toString() {
+        return "RGBLamp: " + name + " -> " +
+            state + " / " +
+            red + "-" + green + "-" + blue;
+    }
 }
 
 public class L14 {
@@ -114,10 +120,17 @@ public class L14 {
 
         Lamp l1 = new Lamp();
         RGBLamp l2 = new RGBLamp();
+        Lamp l3 = l2;
 
         l1.turnOn();
         l2.turnOn();
         l2.setColor(255,0,0);
         System.out.println(l2.getRed());
+
+        l3.turnOff();
+
+        System.out.println(l1);
+        System.out.println(l2);
+        System.out.println(l3);
     }
 }
