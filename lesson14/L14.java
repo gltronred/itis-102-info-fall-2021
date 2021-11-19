@@ -64,6 +64,21 @@ class Lamp {
     }
 }
 
+class RGBLamp extends Lamp {
+    int red;
+    int green;
+    int blue;
+
+    public void setColor(int red, int green, int blue) {
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+    }
+    public int getRed() { return red; }
+    public int getGreen() { return green; }
+    public int getBlue() { return blue; }
+}
+
 public class L14 {
     public static void main(String[] args) {
         // Lamp lamp1 = new Lamp();
@@ -79,21 +94,30 @@ public class L14 {
         // lamp1 = lamp2;
         // System.out.println(lamp1);
         // System.out.println(lamp2);
-        Candle c1 = new Candle(5);
-        c1.turnOn();
-        Candle c2 = new Candle(2);
-        c2.turnOn();
-        for (int i=0; i<2; i++) {
-            System.out.println(c1 + " " + c1.getState());
-            System.out.println(c2 + " " + c2.getState());
-        }
-        c2.turn(c1);
-        System.out.println(c2 + " " + c2.getState());
-        Candle c3 = new Candle(10);
-        c1.turn(c3);
-        System.out.println(c1 + " " + c1.getState());
-        System.out.println(c3 + " " + c3.getState());
-        c3.turnOff();
-        System.out.println(c3 + " " + c3.getState());
+        //
+        // Candle c1 = new Candle(5);
+        // c1.turnOn();
+        // Candle c2 = new Candle(2);
+        // c2.turnOn();
+        // for (int i=0; i<2; i++) {
+        //     System.out.println(c1 + " " + c1.getState());
+        //     System.out.println(c2 + " " + c2.getState());
+        // }
+        // c2.turn(c1);
+        // System.out.println(c2 + " " + c2.getState());
+        // Candle c3 = new Candle(10);
+        // c1.turn(c3);
+        // System.out.println(c1 + " " + c1.getState());
+        // System.out.println(c3 + " " + c3.getState());
+        // c3.turnOff();
+        // System.out.println(c3 + " " + c3.getState());
+
+        Lamp l1 = new Lamp();
+        RGBLamp l2 = new RGBLamp();
+
+        l1.turnOn();
+        l2.turnOn();
+        l2.setColor(255,0,0);
+        System.out.println(l2.getRed());
     }
 }
