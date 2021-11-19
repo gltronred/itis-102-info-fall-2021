@@ -69,6 +69,9 @@ class RGBLamp extends Lamp {
     int green;
     int blue;
 
+    public RGBLamp() {
+        super("Default RGBLamp");
+    }
     public void turnOn() {
         super.turnOn();
         setColor(255,255,255);
@@ -139,5 +142,13 @@ public class L14 {
 
         l3.turnOn();
         System.out.println(l3);
+
+        // ОШИБКА КОМПИЛЯЦИИ!
+        // l3 - Lamp, поэтому не обязательно,
+        // что у него есть setColor
+        //l3.setColor(0,255,0);
+
+        Object l4 = new RGBLamp();
+        System.out.println("Object " + l4.toString());
     }
 }
