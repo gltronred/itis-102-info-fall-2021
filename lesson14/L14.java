@@ -115,6 +115,19 @@ class Display {
     }
 }
 
+class LCD extends Display {
+    int height;
+    int width;
+
+    public LCD(int height, int width) {
+        super(height);
+        this.heigth = height;
+        this.width = width;
+    }
+    public int getHeight() { return height; }
+    public int getWidth() { return width; }
+}
+
 public class L14 {
     public static void main(String[] args) {
         // Lamp lamp1 = new Lamp();
@@ -177,6 +190,7 @@ public class L14 {
         Display d = new Display(5);
 
         System.out.println(d);
+        d.turnOn();
         for (int i=0; i<10; i++) {
             d.show("Line #" + i);
             System.out.println(d);
