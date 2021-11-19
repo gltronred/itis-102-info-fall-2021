@@ -110,6 +110,9 @@ class Display {
             currentLine %= screen.length;
         }
     }
+    public String toString() {
+        return Arrays.toString(screen);
+    }
 }
 
 public class L14 {
@@ -145,30 +148,38 @@ public class L14 {
         // c3.turnOff();
         // System.out.println(c3 + " " + c3.getState());
 
-        Lamp l1 = new Lamp();
-        RGBLamp l2 = new RGBLamp();
-        Lamp l3 = l2;
+        // Lamp l1 = new Lamp();
+        // RGBLamp l2 = new RGBLamp();
+        // Lamp l3 = l2;
 
-        l1.turnOn();
-        l2.turnOn();
-        l2.setColor(255,0,0);
-        System.out.println(l2.getRed());
+        // l1.turnOn();
+        // l2.turnOn();
+        // l2.setColor(255,0,0);
+        // System.out.println(l2.getRed());
 
-        l3.turnOff();
+        // l3.turnOff();
 
-        System.out.println(l1);
-        System.out.println(l2);
-        System.out.println(l3);
+        // System.out.println(l1);
+        // System.out.println(l2);
+        // System.out.println(l3);
 
-        l3.turnOn();
-        System.out.println(l3);
+        // l3.turnOn();
+        // System.out.println(l3);
 
-        // ОШИБКА КОМПИЛЯЦИИ!
-        // l3 - Lamp, поэтому не обязательно,
-        // что у него есть setColor
-        //l3.setColor(0,255,0);
+        // // ОШИБКА КОМПИЛЯЦИИ!
+        // // l3 - Lamp, поэтому не обязательно,
+        // // что у него есть setColor
+        // //l3.setColor(0,255,0);
 
-        Object l4 = new RGBLamp();
-        System.out.println("Object " + l4.toString());
+        // Object l4 = new RGBLamp();
+        // System.out.println("Object " + l4.toString());
+
+        Display d = new Display(5);
+
+        System.out.println(d);
+        for (int i=0; i<10; i++) {
+            d.show("Line #" + i);
+            System.out.println(d);
+        }
     }
 }
