@@ -3,6 +3,8 @@ import java.util.*;
 
 interface ILight {
     boolean isOn();
+    void turnOn();
+    void turnOff();
 }
 class Candle implements ILight {
     boolean state;
@@ -26,7 +28,9 @@ public class L15 {
     public static void main(String[] args){
         ILight light1 = new Lamp(255);
         ILight light2 = new Candle(true);
+        ILight light3 = new RGBLamp(123);
         System.out.println(light1.isOn());
         System.out.println(light2.isOn());
+        System.out.println(light3.isOn());
     }
 }
