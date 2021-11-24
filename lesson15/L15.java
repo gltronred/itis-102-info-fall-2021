@@ -9,6 +9,8 @@ interface ILight {
 class Candle implements ILight {
     boolean state;
     public boolean isOn() { return state; }
+    public void turnOn() { state=true; }
+    public void turnOff() { state=false; }
     public Candle(boolean state) {
         this.state = state;
     }
@@ -16,6 +18,8 @@ class Candle implements ILight {
 class Lamp implements ILight {
     int state;
     public boolean isOn() { return state>0; }
+    public void turnOn() { state=100; }
+    public void turnOff() { state=0; }
     public Lamp(int state) {
         this.state = state;
     }
