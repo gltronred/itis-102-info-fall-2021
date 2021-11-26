@@ -18,6 +18,21 @@ class Lamp {
     }
 }
 
+class OtherLamp {
+    int serial;
+    public int getSerial() { return serial; }
+}
+
+class OtherLampFactory {
+    public static int count;
+    public static OtherLamp makeNewLamp() {
+        OtherLamp lamp = new OtherLamp();
+        lamp.serial = count;
+        count++;
+        return lamp;
+    }
+}
+
 public class L16 {
     public static void main(String[] args) {
         Lamp l1 = new Lamp();
@@ -33,5 +48,8 @@ public class L16 {
                            " " + l1.getCount());
         System.out.println(Lamp.getCount());
         System.out.println(Math.sin(1));
+        OtherLamp o1 = OtherLampFactory.makeNewLamp();
+        OtherLamp o2 = OtherLampFactory.makeNewLamp();
+        OtherLamp o3 = OtherLampFactory.makeNewLamp();
     }
 }
