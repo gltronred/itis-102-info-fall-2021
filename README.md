@@ -232,7 +232,7 @@ convert(2, new int[]{1,0,1,1})
 ### Класс `Elf` - эльф
 
 Эльфы могут:
-- лечить себя `void heal()` или друга `void heal(Creature friend)`, при этом соответствующий `hp` увеличивается на 1, а в консоль выводится, соответственно, `<name> heals self: <hp>` или `<name> heals <friend_name>: <friend_hp>`
+- лечить себя `void heal()` или друга `void heal(Creature friend)`, при этом соответствующий `hp` увеличивается на уровень эльфа, а в консоль выводится, соответственно, `<name> heals self: <hp>` или `<name> heals <friend_name>: <friend_hp>`
 - быть созданы конструктором с параметрами `(String name)`, начальный `hp` равен 250
 
 ### Класс `Dwarf` - гном
