@@ -1,8 +1,9 @@
 import java.io.*;
 import java.util.*;
 
-import ru.kfu.Student;
-import ru.kfu.Teacher;
+import ru.kfu.*;
+// import ru.kfu.Student;
+// import ru.kfu.Teacher;
 
 // Чужие пакеты должны находиться в classpath,
 // чтобы java их нашла

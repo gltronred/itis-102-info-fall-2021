@@ -8,4 +8,7 @@ public class Teacher {
     public String getSubject() {
         return subject;
     }
+    public static void main(String[] args) {
+        System.out.println("Run main from ru.kfu.Teacher");
+    }
 }
