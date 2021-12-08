@@ -9,6 +9,7 @@ import java.util.*;
 //
 // - throw e - выбрасывает ошибку
 // - try ... catch - обрабатывает ошибку
+// - throws E - описывает, какие возможны ошибки
 
 class SomethingWrongException extends Exception {
     private int x;
@@ -22,7 +23,9 @@ class SomethingWrongException extends Exception {
 }
 
 public class L18 {
-    public static void someMethod(int x) {
+    public static void someMethod(int x)
+        throws SomethingWrongException
+    {
         if (x == 5) {
             throw new SomethingWrongException(x);
         } else if (x == 10) {
