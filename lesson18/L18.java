@@ -11,6 +11,9 @@ import java.util.*;
 // - try ... catch - обрабатывает ошибку
 // - throws E - описывает, какие возможны ошибки
 
+// OddException возникает,
+// когда x - нечётный
+
 class SomethingWrongException extends Exception {
     private int x;
     public SomethingWrongException(int x) {
