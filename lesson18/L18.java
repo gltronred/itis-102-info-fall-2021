@@ -8,7 +8,7 @@ import java.util.*;
 // - класс RuntimeException
 //
 // - throw e - выбрасывает ошибку
-// -
+// - try ... catch - обрабатывает ошибку
 
 public class L18 {
     public static void someMethod(int x) {
@@ -19,6 +19,15 @@ public class L18 {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        someMethod(sc.nextInt());
+        int x = sc.nextInt();
+        do {
+            try {
+                someMethod(x);
+            } catch (Exception e) {
+                System.out.println("Can't use that x!");
+                System.out.println(e);
+            }
+            x = sc.nextInt();
+        } while (x != 0);
     }
 }
