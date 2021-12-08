@@ -10,10 +10,13 @@ import java.util.*;
 // - throw e - выбрасывает ошибку
 // - try ... catch - обрабатывает ошибку
 
+class SomethingWrongException extends RuntimeException {
+}
+
 public class L18 {
     public static void someMethod(int x) {
         if (x == 5) {
-            throw new RuntimeException("Something went wrong!");
+            throw new SomethingWrongException();
         }
         System.out.println(x*2);
     }
