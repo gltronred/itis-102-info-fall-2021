@@ -10,9 +10,9 @@ import java.util.*;
 // - throw e - выбрасывает ошибку
 // - try ... catch - обрабатывает ошибку
 // - throws E - описывает, какие возможны ошибки
+// - try ... catch ... finally - обработка ошибки
 
-// OddException возникает,
-// когда x - нечётный
+class OddException extends Exception {}
 
 class SomethingWrongException extends Exception {
     private int x;
@@ -27,12 +27,12 @@ class SomethingWrongException extends Exception {
 
 public class L18 {
     public static void someMethod(int x)
-        throws SomethingWrongException
+        throws SomethingWrongException, OddException
     {
         if (x == 5) {
             throw new SomethingWrongException(x);
-        } else if (x == 10) {
-            throw new RuntimeException("Wrong x!");
+        } else if (x % 2 == 1) {
+            throw new OddException();
         }
         System.out.println(x*2);
     }
@@ -45,6 +45,10 @@ public class L18 {
             } catch (SomethingWrongException e) {
                 System.out.println("Can't use that x: " + e.getX());
                 System.out.println(e);
+            } catch (OddException e) {
+                System.out.println("Use even x");
+            } finally {
+                System.out.println("Finally works every time");
             }
             // catch (Exception e) {
             //     System.out.println("NOOO!!!");
