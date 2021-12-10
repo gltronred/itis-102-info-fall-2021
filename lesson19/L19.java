@@ -1,5 +1,8 @@
 import java.util.*;
 
+class NoSolutionException extends Exception {}
+class ManySolutionsException extends Exception {}
+
 public class L19 {
     public static void printSystem(double[][] a) {
         for (int i=0; i<a.length; i++) {
@@ -33,7 +36,9 @@ public class L19 {
         }
         return x;
     }
-    public static double[] solve(double[][] a) {
+    public static double[] solve(double[][] a)
+        throws NoSolutionException, ManySolutionsException
+    {
         for (int i=0; i<a.length-1; i++) {
             // Находим строку не с нулём
             int i2 = i;
@@ -51,7 +56,9 @@ public class L19 {
         }
         return solveTri(a);
     }
-    public static void main(String[] args) {
+    public static void main(String[] args)
+        throws NoSolutionException, ManySolutionsException
+    {
         double[][] a = {
             {1,2,3,14},
             {2,4,7,31},
